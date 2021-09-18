@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', '/login');
+
+Route::get('/login', [App\Http\Controllers\Auth\DirectLoginController::class, 'index'])->name('login');
+
+// Auth::routes();
+
+Route::get('/dashboard/pendidik', [App\Http\Controllers\DashboardPendidik\Home\HomeController::class, 'index'])->name('home.pendidik');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
