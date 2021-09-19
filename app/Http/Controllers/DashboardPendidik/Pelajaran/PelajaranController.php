@@ -16,6 +16,10 @@ class PelajaranController extends Controller
     {
         return view('_pendidik.pelajaran.pelajaran_home');
     }
+    public function mapel()
+    {
+        return view('_pendidik.pelajaran.pelajaran_mapel');
+    }
 
     /**
      * Show the form for creating a new resource.
