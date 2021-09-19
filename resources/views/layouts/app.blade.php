@@ -45,6 +45,7 @@
 <!-- ./wrapper -->
 
 @include('layouts.footer_scripts')
+@stack('after-script')
 
 </body>
 </html>

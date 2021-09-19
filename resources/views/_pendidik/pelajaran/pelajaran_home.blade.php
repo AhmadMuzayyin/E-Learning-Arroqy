@@ -1,0 +1,98 @@
+@extends('layouts.app')
+@section('title', 'Dashboard Pendidik')
+
+@section('content')
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>Pelajaran</h1>
+      </div>
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="{{ route('dashboard.pendidik') }}">Home</a></li>
+          <li class="breadcrumb-item active">Pelajaran</li>
+        </ol>
+      </div>
+    </div>
+  </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h3 class="card-title">Data Pelajaran</h3>
+            <a href="" class="ml-auto">
+            	<button class="btn btn-primary">Tambah Data Pelajaran</button>
+            </a>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table id="table_pelajaran" class="table table-bordered table-hover">
+              <thead>
+              <tr>
+                <th>No</th>
+                <th>Pelajaran</th>
+                <th>Tanggal & Waktu</th>
+                <th>Guru Pengampu</th>
+                <th>Aksi</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>1</td>
+                <td>Matematika</td>
+                <td>Senin, 19-Juli-2021. 10:00:00 </td>
+                <td>Bu Sri Mulyani. S.Pd</td>
+                <td>Edit, Delete</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Bahasa Inggris</td>
+                <td>Selasa, 20-Juli-2021. 07:00:00</td>
+                <td>Bu Handayani. S.Pd</td>
+                <td>Edit Delete</td>
+              </tr>
+              </tfoot>
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+
+
+@endsection
+
+@push('after-script')
+
+<script>
+  $(function () {
+
+    $('#table_pelajaran').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+
+  });
+</script>
+
+@endpush

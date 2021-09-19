@@ -19,6 +19,16 @@ Route::get('/login', [App\Http\Controllers\Auth\DirectLoginController::class, 'i
 
 // Auth::routes();
 
-Route::get('/dashboard/pendidik', [App\Http\Controllers\DashboardPendidik\Home\HomeController::class, 'index'])->name('home.pendidik');
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'namespace' => 'DashboardPendidik'], function(){
+
+	Route::redirect('/', '/pendidik');
+	
+	// Home Pendidik 
+	Route::get('/pendidik', [App\Http\Controllers\DashboardPendidik\Home\HomeController::class, 'index'])->name('pendidik');
+	
+	// Home Pelajaran
+	Route::get('/pelajaran', [App\Http\Controllers\DashboardPendidik\Pelajaran\PelajaranController::class, 'index'])->name('pelajaran');
+
+});

@@ -27,10 +27,10 @@
 
       <form action="{{ asset('theme') }}/index3.html" method="post">
         <div class="input-group mb-3">
-          <input type="number" class="form-control" placeholder="NISN / NIP">
+          <input type="number" class="form-control" placeholder="Email">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-users"></span>
+              <span class="fas fa-email"></span>
             </div>
           </div>
         </div>
